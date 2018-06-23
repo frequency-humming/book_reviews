@@ -1,0 +1,20 @@
+div {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 3%;
+    width: 20%;
+}
+p {
+    font-size: 26px;
+    margin: 0.5% 0;
+}
+h1 {
+    text-transform: capitalize;
+}
+form > p {
+    font-size: 20px;
+    margin-top: 5%;
+}
+select {
+    margin-left: 8%;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add book and review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'book_reviews/css/books.css' %}">
+</head>
+<body>
+    <p><a href="/books">Home</a></p>
+    <div>
+        <h1>{{ book.title }}</h1>
+        <h2>Author: {{ book.book_author.name }}</h2>
+        <h3>Reviews:</h3>
+        {% for use in reviews %}
+        <h4><a href="/users/{{use.user_review.id}}">{{ use.user_review.name }}</a>: {{ use.content }}</h4>
+        <h4>rating: {{ use.rating }} stars</h4>
+        <h4>{{ use.created_at }}</h4>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Submit a review</h2>
+        <form action="/review/{{ book.id }}" method="post">
+        {% csrf_token %}
+        <textarea name="content"></textarea>
+        <p>Rating:<select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select></p>
+        <p><input type="submit" value="Submit Review"></p>
+        </form>
+    </div>
+</body>
+</html>

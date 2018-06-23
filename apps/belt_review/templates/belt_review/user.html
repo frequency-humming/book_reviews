@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Reviews</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'belt_reviewer/css/main.css' %}">
+</head>
+<body>
+    <p><a href="/books">Home</a></p>
+    <p><a href="/books/add">Add Book and Review</a></p>
+    <div>
+        <h2>Alias: {{ user.alias }}</h2>
+        <h2>Name: {{ user.name }}</h2>
+        <h2>Email: {{ user.email }}</h2>
+        <h2>Posted reviews on the following books:</h2>
+        {% for use in book %}
+        <p><a href="/books/{{ use.book_review.id }}">{{ use.book_review.title }}</a></p>
+        {% endfor %}
+    </div> 
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add book and review</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'belt_reviewer/css/main.css' %}">
+</head>
+<body>
+    <p><a href="/books">Home</a></p>
+    <p><a href="/books/add">Add Book and Review</a></p>
+    <div>
+        <h2>Add a new book title and a review</h2>
+        <form action="/add_book/{{ request.session.id }}" method="post">
+            {% csrf_token %}   
+            <p>Title: <input type="text" name="title"></p>
+            <p>Author: <input type="text" name="author"></p>
+            <p>Rating:
+            <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select></p>
+            <p>Review:</p> 
+            <textarea name="review" cols="30" rows="6"></textarea>
+            <p><input type="submit" value="Add Book and Review"></p>
+        </form>
+    </div>       
+</body>
+</html>

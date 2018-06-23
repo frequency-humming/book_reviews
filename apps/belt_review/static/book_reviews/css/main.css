@@ -1,0 +1,24 @@
+.register {
+    margin-left: 31%;
+    width: 250px;
+    height: 400px;
+    display: inline-block;
+}
+.login {
+    width: 220px;
+    height: 300px;
+    margin-left: 1%;
+    display: inline-block;
+    vertical-align: top;
+}
+div {
+    display: inline-block;
+    vertical-align: top;
+}
+h1 {
+    text-align: center;
+}
+input {
+    position: relative;
+    float: right;
+}

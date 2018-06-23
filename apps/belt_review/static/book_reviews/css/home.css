@@ -1,0 +1,14 @@
+.link {
+    position: relative;
+    float: right;
+}
+div {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5%;
+}
+
+.other {
+    height: 600px;
+    overflow: scroll;
+}
